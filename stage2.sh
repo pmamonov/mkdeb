@@ -9,6 +9,7 @@ apt-get -y install						\
 	vim make gcc gdb less					\
 	slim i3 xscreensaver firefox-esr mutt gnupg		\
 	rxvt-unicode screen minicom ipython			\
+	firmware-realtek wicd-curses				\
 	sysvinit-core						\
 || exit $?
 
