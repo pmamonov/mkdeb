@@ -7,7 +7,8 @@ apt-get purge systemd
 apt-get -y install						\
 	net-tools openssh-client openssh-server ntp		\
 	vim make gcc gdb less					\
-	slim xfce4 firefox-esr					\
+	slim i3 xscreensaver firefox-esr mutt gnupg		\
+	rxvt-unicode screen minicom ipython			\
 	sysvinit-core						\
 || exit $?
 
