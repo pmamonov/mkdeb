@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh -e
 
 ARCH=$1
 SUITE=$2
