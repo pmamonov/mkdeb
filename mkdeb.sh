@@ -8,7 +8,8 @@ SUITE=$2
 
 MIRROR=http://mirror.yandex.ru/debian
 TGT=debian-$SUITE-$ARCH
-QEMU=qemu-"$ARCH"-static
+QARCH=$(echo $ARCH | sed 's/^arm.*$/arm/')
+QEMU=qemu-$QARCH-static
 
 which $QEMU || apt-get install qemu-user-static
 which debootstrap || apt-get install debootstrap
