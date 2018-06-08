@@ -27,6 +27,8 @@ echo  "deb $MIRROR $SUITE main contrib non-free" > $TGT/etc/apt/sources.list
 
 cp stage2.sh $TGT/
 
+cp systemd  $TGT/etc/apt/preferences.d/systemd
+
 ## configure && install additional packages
 mount -t proc none $TGT/proc
 mount -o bind /dev $TGT/dev
