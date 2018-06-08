@@ -22,7 +22,7 @@ cp $(which $QEMU) $TGT/usr/bin
 debootstrap --arch=$ARCH $SUITE $TGT $MIRROR
 
 ## copy configs
-cp /etc/apt/apt.conf $TGT/etc/apt/apt.conf
+[ -f /etc/apt/apt.conf ] && cp /etc/apt/apt.conf $TGT/etc/apt/apt.conf
 cp /etc/resolv.conf $TGT/etc/
 echo  "deb $MIRROR $SUITE main contrib non-free" > $TGT/etc/apt/sources.list
 
