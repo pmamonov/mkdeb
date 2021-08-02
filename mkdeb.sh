@@ -6,7 +6,8 @@ SUITE=$2
 #ARCH=mips64el
 #SUITE=stretch
 
-MIRROR=http://mirror.yandex.ru/debian
+#MIRROR=http://mirror.yandex.ru/debian
+MIRROR=http://archive.debian.org/debian
 TGT=debian-$SUITE-$ARCH
 QEMU=qemu-"$ARCH"-static
 
@@ -18,7 +19,7 @@ cp $(which $QEMU) $TGT/usr/bin
 
 
 ## install base system
-debootstrap --arch=$ARCH $SUITE $TGT $MIRROR
+debootstrap --no-check-gpg --arch=$ARCH $SUITE $TGT $MIRROR
 
 ## copy configs
 cp /etc/apt/apt.conf $TGT/etc/apt/apt.conf
