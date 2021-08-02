@@ -36,4 +36,4 @@ umount $TGT/dev $TGT/proc
 rm -f $TGT/etc/apt/apt.conf $TGT/etc/resolv.conf $TGT/stage2.sh
 
 ## create an archive
-tar czf $TGT.tar.gz $TGT
+tar czf $TGT.tar.gz -C $TGT .
