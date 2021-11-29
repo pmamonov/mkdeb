@@ -30,9 +30,10 @@ cp stage2.sh $TGT/
 ## configure && install additional packages
 mount -t proc none $TGT/proc
 mount -o bind /dev $TGT/dev
+mount -o bind /dev/pts $TGT/dev/pts
 chroot $TGT /bin/bash /stage2.sh
 
-umount $TGT/dev $TGT/proc
+umount $TGT/dev/pts $TGT/dev $TGT/proc
 rm -f $TGT/etc/apt/apt.conf $TGT/etc/resolv.conf $TGT/stage2.sh
 
 ## create an archive
