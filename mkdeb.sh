@@ -23,7 +23,7 @@ cp $(which $QEMU) $TGT/usr/bin
 
 
 ## install base system
-debootstrap --arch=$ARCH $SUITE $TGT $MIRROR
+debootstrap --no-check-gpg --arch=$ARCH $SUITE $TGT $MIRROR
 
 ## copy configs
 [ -f /etc/apt/apt.conf ] && cp /etc/apt/apt.conf $TGT/etc/apt/apt.conf
