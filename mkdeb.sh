@@ -2,11 +2,15 @@
 
 ARCH=$1
 SUITE=$2
+MIRROR=$3
 
 #ARCH=mips64el
 #SUITE=stretch
 
-MIRROR=http://mirror.yandex.ru/debian
+if [ -z "$MIRROR" ]; then
+	MIRROR=http://mirror.yandex.ru/debian
+fi
+
 TGT=debian-$SUITE-$ARCH
 QARCH=$(echo $ARCH | sed 's/^arm.*$/arm/')
 QEMU=qemu-$QARCH-static
